@@ -1,7 +1,29 @@
-#include <stdio.h>
+// 貴方が押すキーは1、2、3？未来の貴方に聞いてみましょう。
+using System;
+using Mirai;
 
-int main( void )
+namespace sample02
 {
-    printf("Hello, world!\n");
-    return 0;
+    class Program
+    {
+        static void Main()
+        {
+          Future<int> future = new Future<int>();
+          int futureState = future.get();
+          MiraiPC.LightsState = futureState;
+
+          switch(Console.ReadKey().toString())
+          {
+            case "D1":
+              future.set(1);
+              break;
+            case "D2":
+              future.set(2);
+              break;
+            case "D3":
+              future.set(3);
+              break;
+          }
+        }
+    }
 }

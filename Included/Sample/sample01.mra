@@ -1,7 +1,14 @@
-#include <stdio.h>
+// 最初にライトを付けてみましょう。
+using System;
+using Mirai;
 
-int main( void )
+namespace sample01
 {
-    printf("Hello, world!\n");
-    return 0;
+    class Program
+    {
+        static void Main()
+        {
+          MiraiPC.LightsState = 1;
+        }
+    }
 }
